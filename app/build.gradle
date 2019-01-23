@@ -26,4 +26,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'me.jessyan:autosize:1.1.2'
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.interceptor"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.converterGson"
+    implementation "io.reactivex:rxandroid:$rootProject.rxandroid"
+    implementation "io.reactivex:rxjava:$rootProject.rxjava"
+    implementation "com.hwangjr.rxbus:rxbus:$rootProject.rxbus"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$rootProject.adapterRxjava"
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

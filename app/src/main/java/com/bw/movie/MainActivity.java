@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.bw.movie.base.BaseActivity;
+import com.bw.movie.utils.ToastUtil;
 
 public class MainActivity extends BaseActivity {
 
@@ -29,7 +30,7 @@ public class MainActivity extends BaseActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "按钮被触发", Toast.LENGTH_SHORT).show();
+                ToastUtil.Toast("aaa");
             }
         });
     }

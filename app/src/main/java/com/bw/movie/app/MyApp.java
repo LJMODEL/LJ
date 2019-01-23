@@ -2,6 +2,7 @@ package com.bw.movie.app;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 
 import java.util.Locale;
 
@@ -12,9 +13,11 @@ import me.jessyan.autosize.utils.LogUtils;
 import me.jessyan.autosize.utils.ScreenUtils;
 
 public class MyApp extends Application {
+    public static Context context;
     @Override
     public void onCreate() {
         super.onCreate();
+        context=this;
         AutoSize.initCompatMultiProcess(this);
         AutoSizeConfig.getInstance().setExcludeFontScale(true).setOnAdaptListener(new onAdaptListener() {
             @Override

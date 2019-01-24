@@ -60,20 +60,23 @@ public class RegisteredActivity extends AppCompatActivity implements MyView {
         String mphone = phone.getText().toString();
         String memli = emli.getText().toString();
         String mpassword = password.getText().toString();
-
+        //每次判断return，只要不合格就不能继续
         if (mname.equals("") || mgender.equals("") || mdate.equals("") || mphone.equals("") || memli.equals("") || mpassword.equals("")) {
             ToastUtil.Toast("不能为空");
+            return;
         } else if (!isphone(mphone)) {
             ToastUtil.Toast("请重新输入手机号");
+            return;
         } else if (!isemli(memli)) {
             ToastUtil.Toast("邮箱不正确请重新输入邮箱");
+            return;
         }
+        //在这里判断男女然后返回一二
         if (mgender.equals("男")) {
             sex = 1;
         } else if (mgender.equals("女")) {
             sex = 2;
         }
-        ToastUtil.Toast("注册");
         Map<String, Object> headmap = new HashMap<>();
         Map<String, Object> map = new HashMap<>();
         String mpwd1 = EncryptUtil.encrypt(mpassword);
@@ -83,7 +86,7 @@ public class RegisteredActivity extends AppCompatActivity implements MyView {
         map.put("sex", sex);
         map.put("birthday", mdate);
         map.put("email", memli);
-        map.put("pwd2",mpwd1);
+        map.put("pwd2", mpwd1);
         presenter.getregister(Contacts.REGISTER, headmap, map, RegisteredBean.class);
     }
 
@@ -92,13 +95,15 @@ public class RegisteredActivity extends AppCompatActivity implements MyView {
         if (data instanceof RegisteredBean) {
             RegisteredBean registeredBean = (RegisteredBean) data;
             ToastUtil.Toast(registeredBean.getStatus());
-            Intent intent = new Intent(RegisteredActivity.this,LogActivity.class);
+            Intent intent = new Intent(RegisteredActivity.this, LogActivity.class);
             startActivity(intent);
         }
     }
+
     @Override
     public void error(String error) {
     }
+
     /**
      * 验证手机是否正确
      *

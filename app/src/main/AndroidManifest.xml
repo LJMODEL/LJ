@@ -7,7 +7,7 @@
     <application
         android:name=".app.MyApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/timg"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -28,7 +28,8 @@
             android:value="667" />
 
         <activity android:name=".activity.GuideActivity" />
-        <activity android:name=".activity.LogActivity"></activity>
+        <activity android:name=".activity.LogActivity" />
+        <activity android:name=".activity.RegisteredActivity"></activity>
     </application>
 
 </manifest>

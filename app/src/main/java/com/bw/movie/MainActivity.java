@@ -10,7 +10,6 @@ import com.bw.movie.base.BaseActivity;
 public class MainActivity extends BaseActivity {
     //是否是第一次使用
     private boolean isFirstUse;
-    private int count = 2;
     private SharedPreferences preferences;
 
     @Override

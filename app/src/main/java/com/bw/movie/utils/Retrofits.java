@@ -70,6 +70,7 @@ public class Retrofits {
 
 //        封装一个post  的请求方式
     public Retrofits post(String url,Map<String,Object> headmap,Map<String,Object> map){
+
         myApiService.post(url,headmap,map).subscribeOn(Schedulers.io())//io就是子线程
                 //在主线程调用
                 .observeOn(AndroidSchedulers.mainThread())
@@ -93,7 +94,7 @@ public class Retrofits {
         return Retrofits.getInstance();
     }
 
-        public Observer observer =new Observer<ResponseBody>() {
+        private Observer<ResponseBody> observer =new Observer<ResponseBody>() {
             @Override
             public void onCompleted() {
 

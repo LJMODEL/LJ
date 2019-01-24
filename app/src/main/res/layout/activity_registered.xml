@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login"
+    tools:context=".activity.RegisteredActivity">
+
+    <com.xw.repo.XEditText
+        android:id="@+id/name"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="134dp"
+        android:layout_marginRight="60dp"
+        android:background="@null"
+        android:hint="名称"
+        android:lines="1"
+        android:numeric="integer"
+        android:paddingLeft="35dp"
+        android:paddingBottom="15dp"
+        android:textColor="#eeeeee"
+        android:textColorHint="#919191"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="135dp"
+        android:src="@mipmap/register_icon_name_default_hdpi" />
+
+    <View
+        android:layout_width="280dp"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="-6dp"
+        android:layout_marginRight="60dp"
+        android:background="#d9d9d9" />
+
+    <com.xw.repo.XEditText
+        android:id="@+id/gender"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:background="@null"
+        android:hint="性别"
+        android:lines="1"
+        android:numeric="integer"
+        android:paddingLeft="45dp"
+        android:paddingBottom="15dp"
+        android:textColor="#eeeeee"
+        android:textColorHint="#919191"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/register_icon_sex_default_hdpi" />
+
+    <View
+        android:layout_width="280dp"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/gender"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="-6dp"
+        android:layout_marginRight="60dp"
+        android:background="#d1d1d1" />
+
+    <com.xw.repo.XEditText
+        android:id="@+id/date"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gender"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:background="@null"
+        android:hint="出生日期"
+        android:lines="1"
+        android:numeric="integer"
+        android:paddingLeft="45dp"
+        android:paddingBottom="15dp"
+        android:textColor="#eeeeee"
+        android:textColorHint="#919191"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/gender"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/register_icon_date_default_hdpi" />
+
+    <View
+        android:layout_width="280dp"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/date"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="-6dp"
+        android:layout_marginRight="60dp"
+        android:background="#d1d1d1" />
+
+    <com.xw.repo.XEditText
+        android:id="@+id/phone"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:background="@null"
+        android:hint="手机号"
+        android:lines="1"
+        android:numeric="integer"
+        android:paddingLeft="45dp"
+        android:paddingBottom="15dp"
+        android:textColor="#eeeeee"
+        android:textColorHint="#919191"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/date"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/register_icon_phone_default_hdpi" />
+
+    <View
+        android:layout_width="280dp"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/phone"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="-6dp"
+        android:layout_marginRight="60dp"
+        android:background="#d1d1d1" />
+
+    <com.xw.repo.XEditText
+        android:id="@+id/emli"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:background="@null"
+        android:hint="邮箱"
+        android:lines="1"
+        android:numeric="integer"
+        android:paddingLeft="45dp"
+        android:paddingBottom="15dp"
+        android:textColor="#eeeeee"
+        android:textColorHint="#919191"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/phone"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/register_icon_mail_default_hdpi" />
+
+    <View
+        android:layout_width="280dp"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/emli"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="-6dp"
+        android:layout_marginRight="60dp"
+        android:background="#d1d1d1" />
+
+    <com.xw.repo.XEditText
+        android:id="@+id/password"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emli"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:background="@null"
+        android:hint="登录密码"
+        android:lines="1"
+        android:numeric="integer"
+        android:paddingLeft="45dp"
+        android:paddingBottom="15dp"
+        android:textColor="#eeeeee"
+        android:textColorHint="#919191"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/emli"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/register_icon_lock_default_hdpi" />
+
+    <View
+        android:layout_width="280dp"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/password"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="-6dp"
+        android:layout_marginRight="60dp"
+        android:background="#d1d1d1" />
+</RelativeLayout>

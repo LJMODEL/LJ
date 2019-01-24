@@ -14,5 +14,8 @@
         <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
-
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorcheck</item>
+        <item name="colorControlActivated">@color/colorcheck</item>
+    </style>
 </resources>

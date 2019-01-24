@@ -94,7 +94,7 @@ public class RegisteredActivity extends AppCompatActivity implements MyView {
     public void success(Object data) {
         if (data instanceof RegisteredBean) {
             RegisteredBean registeredBean = (RegisteredBean) data;
-            ToastUtil.Toast(registeredBean.getStatus());
+            ToastUtil.Toast(registeredBean.getMessage());
             Intent intent = new Intent(RegisteredActivity.this, LogActivity.class);
             startActivity(intent);
         }

@@ -31,12 +31,12 @@
 
     <View
         android:layout_width="280dp"
-        android:layout_height="0.3dp"
+        android:layout_height="2dp"
         android:layout_below="@+id/phone"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="-6dp"
         android:layout_marginRight="60dp"
-        android:background="#d1d1d1" />
+        android:background="#33ffffff" />
 
     <com.xw.repo.XEditText
         android:id="@+id/pwd"
@@ -47,7 +47,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginRight="40dp"
         android:background="@null"
-        android:drawableRight="@mipmap/log_icon_eye_default_hdpi"
+        android:password="true"
         android:hint="登录密码"
         android:lines="1"
         android:paddingLeft="45dp"
@@ -65,14 +65,24 @@
         android:layout_marginTop="35dp"
         android:src="@mipmap/log_icon_lock_default_hdpi" />
 
+    <ImageView
+        android:id="@+id/hidden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="46dp"
+        android:layout_marginRight="65dp"
+        android:src="@mipmap/log_icon_eye_default_hdpi" />"/>
+
     <View
         android:layout_width="280dp"
-        android:layout_height="0.3dp"
+        android:layout_height="2dp"
         android:layout_below="@+id/pwd"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="-6dp"
         android:layout_marginRight="60dp"
-        android:background="#d1d1d1" />
+        android:background="#33ffffff" />
 
     <CheckBox
         android:id="@+id/checkbox"

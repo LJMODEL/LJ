@@ -29,7 +29,8 @@
 
         <activity android:name=".activity.GuideActivity" />
         <activity android:name=".activity.LogActivity" />
-        <activity android:name=".activity.RegisteredActivity"></activity>
+        <activity android:name=".activity.RegisteredActivity" />
+        <activity android:name=".activity.FilmActivity"></activity>
     </application>
 
 </manifest>

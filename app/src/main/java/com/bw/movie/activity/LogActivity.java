@@ -3,7 +3,12 @@ package com.bw.movie.activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -35,56 +40,83 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnTouch;
 
-public class LogActivity extends BaseActivity implements MyView {
+public class LogActivity extends AppCompatActivity implements MyView, View.OnClickListener {
 
-    @BindView(R.id.phone)
-    XEditText phone;
-    @BindView(R.id.pwd)
-    XEditText pwd;
-    @BindView(R.id.zhuce)
-    TextView zhuce;
-    @BindView(R.id.login)
-    Button login;
-    @BindView(R.id.weixin)
-    ImageView weixin;
-    @BindView(R.id.checkbox)
-    CheckBox checkbox;
+    private XEditText phone, pwd;
+    private TextView zhuce;
+    private Button login;
+    private ImageView weixin, hidden;
+    private CheckBox checkbox;
     private MyPresenterImpl presenter;
+    private boolean isHideFirst = true;
     //退出
     private long exitTime = 0;
-
-    @Override
-    protected int setLayout() {
-        return R.layout.activity_log;
-    }
-
-    @Override
-    protected void initView() {
-        presenter = new MyPresenterImpl(this);
-    }
-
-    @Override
-    protected void initData() {
-        /*if (SpUtil.getBoolean("jizhu", false)) {
-            String mName = SpUtil.getString("name", "");
-            String mPass = SpUtil.getString("pass", "");
-            boolean jizhu = SpUtil.getBoolean("jizhu", true);
-            phone.setText(mName+"");
-            pwd.setText(mPass+"");
-            checkbox.setChecked(jizhu);
-        }*/
-    }
+    private SharedPreferences sp;
+    private SharedPreferences.Editor edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+        setContentView(R.layout.activity_log);
+        inView();
+        pwd.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                // et.getCompoundDrawables()得到一个长度为4的数组，分别表示左右上下四张图片
+                Drawable drawable = pwd.getCompoundDrawables()[2];
+                //如果右边没有图片,不处理
+                if (drawable == null) {
+                    return false;
+                }
+                //如果不是按下事件,不处理
+                if (motionEvent.getAction() != MotionEvent.ACTION_UP) {
+                    return false;
+                }
+                if (motionEvent.getX() > pwd.getWidth()
+                        - pwd.getPaddingRight()
+                        - drawable.getIntrinsicWidth()) {
+                    if (isHideFirst == true) {
+                        //editText可见
+                        pwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        isHideFirst = false;
+                    } else {
+                        //editText不可见
+                        pwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        isHideFirst = true;
+                    }
+                }
+                return false;
+            }
+        });
     }
 
-    @OnClick({R.id.zhuce, R.id.login, R.id.weixin, R.id.checkbox})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
+    private void inView() {
+        sp = getSharedPreferences("login", MODE_PRIVATE);
+        presenter = new MyPresenterImpl(this);
+        phone = findViewById(R.id.phone);
+        pwd = findViewById(R.id.pwd);
+        zhuce = findViewById(R.id.zhuce);
+        login = findViewById(R.id.login);
+        weixin = findViewById(R.id.weixin);
+        checkbox = findViewById(R.id.checkbox);
+        hidden = findViewById(R.id.hidden);
+        weixin.setOnClickListener(this);
+        login.setOnClickListener(this);
+        zhuce.setOnClickListener(this);
+        checkbox.setOnClickListener(this);
+        if (sp.getString("name", "") != null) {
+            String mName = sp.getString("name", "");
+            String mPass = sp.getString("pass", "");
+            boolean ji = sp.getBoolean("jizhu", false);
+            phone.setText(mName);
+            pwd.setText(mPass);
+            checkbox.setChecked(ji);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.zhuce:
                 Intent intent = new Intent(LogActivity.this, RegisteredActivity.class);
                 //跳转动画
@@ -115,24 +147,8 @@ public class LogActivity extends BaseActivity implements MyView {
                 break;
             case R.id.weixin:
                 break;
-            case R.id.checkbox:
-
-                break;
         }
     }
-
-    /**
-     * 验证手机是否正确
-     *
-     * @param
-     * @return boolean
-     */
-    public static boolean isphone(String phone) {
-        return phone_pattern.matcher(phone).matches();
-    }
-
-    //手机号表达式
-    private final static Pattern phone_pattern = Pattern.compile("^(13|15|18)\\d{9}$");
 
     @Override
     public void success(Object data) {
@@ -144,27 +160,37 @@ public class LogActivity extends BaseActivity implements MyView {
                 if (checkbox.isChecked()) {
                     String nName = phone.getText().toString().trim();
                     String nPass = pwd.getText().toString().trim();
-                    SpUtil.put("name", nName);
-                    SpUtil.put("pass", nPass);
-                    SpUtil.put("jizhu", true);
+                    edit = sp.edit();
+                    edit.putString("name", nName);
+                    edit.putString("pass", nPass);
+                    edit.putBoolean("jizhu", true);
+                    edit.commit();
                 } else {
-                    SpUtil.remove();
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.clear();
+                    edit.commit();
                 }
                 Toast.makeText(this, logBean.getMessage(), Toast.LENGTH_SHORT).show();
-                //startActivity(new Intent(LogActivity.this, ShouYe_Activity.class));
-                //finish();
+                startActivity(new Intent(LogActivity.this, FilmActivity.class));
+                finish();
             }
         }
     }
 
+    //异常
     @Override
     public void error(String error) {
-        Log.e("zzz", "error: " + error);
+
     }
 
-    /**
-     * 返回两次退出
-     */
+    public static boolean isphone(String phone) {
+        return phone_pattern.matcher(phone).matches();
+    }
+
+    //手机号表达式
+    private final static Pattern phone_pattern = Pattern.compile("^(13|15|18)\\d{9}$");
+
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -186,9 +212,7 @@ public class LogActivity extends BaseActivity implements MyView {
         }
     }
 
-    /**
-     * 点击软键盘外部键盘收缩
-     */
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {

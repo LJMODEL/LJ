@@ -50,9 +50,7 @@ public class MainActivity extends BaseActivity {
         //setColor(MainActivity.this,Color.BLACK); // 改变状态栏的颜色
         // setTranslucent(MainActivity.this); // 改变状态栏变成透明
     }
-
     @Override
     protected void initData() {
-
     }
 }

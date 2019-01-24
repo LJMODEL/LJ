@@ -2,6 +2,7 @@ package com.bw.movie.model;
 
 import android.util.Log;
 
+import com.bw.movie.bean.LogBean;
 import com.bw.movie.callback.MyCallBack;
 import com.bw.movie.utils.Retrofits;
 import com.google.gson.Gson;

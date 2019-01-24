@@ -1,5 +1,6 @@
 package com.bw.movie.presenter;
 
+import android.content.Intent;
 import android.util.Log;
 
 import com.bw.movie.callback.MyCallBack;

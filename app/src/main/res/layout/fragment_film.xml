@@ -1,7 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff0">
+    >
+    <LinearLayout
 
-</android.support.constraint.ConstraintLayout>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/q1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="186dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/background" />
+
+            <ImageView
+                android:id="@+id/film_first_page_head_loc"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="6dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:src="@mipmap/com_icon_loc_white_default_hdpi" />
+
+            <TextView
+                android:id="@+id/film_first_page_head_loc_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_toRightOf="@id/film_first_page_head_loc"
+                android:text="北京"
+                android:textColor="#fff"
+                android:textSize="14sp" />
+
+          <!--  <com.example.myapplication.FilmFirstPageSearchView
+                android:id="@+id/film_first_page_head_search"
+                android:layout_width="50dp"
+                android:layout_height="24dp"
+                android:layout_alignBottom="@+id/film_first_page_head_loc_name"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="35dp"
+                android:layout_toRightOf="@id/film_first_page_head_loc_name" />-->
+
+            <!--<recycler.coverflow.RecyclerCoverFlow
+                android:id="@+id/film_first_page_head_viewpager"
+                android:layout_width="327dp"
+                android:layout_height="223dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="85dp"></recycler.coverflow.RecyclerCoverFlow>
+-->
+            <RelativeLayout
+                android:id="@+id/movie_total_zhi"
+                android:layout_width="340dp"
+                android:layout_height="3dp"
+                android:layout_below="@+id/q1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/xian"
+                tools:ignore="NotSibling">
+                <View
+                    android:id="@+id/movie_total_shi"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/tuo_yuan" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="312dp"
+            android:layout_height="186dp"
+            android:layout_gravity="center"
+            >
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/com_icon_next_default_hdpi"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+            <TextView
+                android:id="@+id/remendianying"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="热门电影"
+                android:textSize="16sp"/>
+            <View
+                android:id="@+id/view1"
+                android:layout_below="@id/remendianying"
+                android:layout_marginTop="4dp"
+                android:layout_width="30dp"
+                android:layout_height="3dp"
+                android:background="@drawable/recycler_view_shape"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recy_remen"
+                android:layout_below="@id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"></android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="312dp"
+            android:layout_height="186dp"
+            android:layout_gravity="center"
+            >
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/com_icon_next_default_hdpi"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+            <TextView
+                android:id="@+id/zhangzai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="即将上映"
+                android:textSize="16sp"/>
+            <View
+                android:id="@+id/view2"
+                android:layout_below="@id/zhangzai"
+                android:layout_marginTop="4dp"
+                android:layout_width="30dp"
+                android:layout_height="3dp"
+                android:background="@drawable/recycler_view_shape"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recy_shangying"
+                android:layout_below="@id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"></android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="312dp"
+            android:layout_height="186dp"
+            android:layout_gravity="center"
+            >
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/com_icon_next_default_hdpi"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+            <TextView
+                android:id="@+id/jijiang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="正在上映"
+                android:textSize="16sp"/>
+            <View
+                android:id="@+id/view3"
+                android:layout_below="@id/jijiang"
+                android:layout_marginTop="4dp"
+                android:layout_width="30dp"
+                android:layout_height="3dp"
+                android:background="@drawable/recycler_view_shape"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recy_jijiang"
+                android:layout_below="@id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"></android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

@@ -142,7 +142,7 @@ public class LogActivity extends AppCompatActivity implements MyView, View.OnCli
                     String mpwd1 = EncryptUtil.encrypt(mpwd);
                     map.put("phone", mphone);
                     map.put("pwd", mpwd1);
-                    presenter.getlogin(Contacts.LOGIN, headmap, map, LogBean.class);
+                    presenter.getpost(Contacts.LOGIN, headmap, map, LogBean.class);
                 }
                 break;
             case R.id.weixin:
@@ -154,6 +154,7 @@ public class LogActivity extends AppCompatActivity implements MyView, View.OnCli
     public void success(Object data) {
         if (data instanceof LogBean) {
             LogBean logBean = (LogBean) data;
+            LogBean.ResultBean result = logBean.getResult();
             if (logBean.getStatus().equals("1001")) {
                 Toast.makeText(this, logBean.getMessage(), Toast.LENGTH_SHORT).show();
             } else {
@@ -161,6 +162,10 @@ public class LogActivity extends AppCompatActivity implements MyView, View.OnCli
                     String nName = phone.getText().toString().trim();
                     String nPass = pwd.getText().toString().trim();
                     edit = sp.edit();
+                    String sessionId = result.getSessionId();
+                    int userId = result.getUserId();
+                    edit.putString("sessionId", sessionId);
+                    edit.putInt("userId", userId);
                     edit.putString("name", nName);
                     edit.putString("pass", nPass);
                     edit.putBoolean("jizhu", true);

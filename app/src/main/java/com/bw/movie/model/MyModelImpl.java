@@ -2,52 +2,93 @@ package com.bw.movie.model;
 
 import android.util.Log;
 
+import com.bw.movie.bean.FilmRecycler_RemenBean;
 import com.bw.movie.bean.LogBean;
+import com.bw.movie.bean.RegisteredBean;
 import com.bw.movie.callback.MyCallBack;
 import com.bw.movie.utils.Retrofits;
 import com.google.gson.Gson;
 
 import java.util.Map;
 
-public class MyModelImpl implements MyModel{
-    /*
-    * 登录
-    * */
+public class MyModelImpl implements MyModel {
+    /**
+     * post请求
+     *
+     * @param url
+     * @param headmap
+     * @param map
+     * @param clas
+     * @param callBack
+     */
     @Override
-    public void setlogin(String url, Map<String, Object> headmap, Map<String, Object> map, final Class clas, final MyCallBack callBack) {
-        Retrofits.getInstance().post(url,headmap,map).getonclcked(new Retrofits.onclick() {
-            @Override
-            public void success(String strjson) {
-                Gson gson=new Gson();
-                Object o = gson.fromJson(strjson, clas);
-                callBack.success(o);
-            }
+    public void setpost(String url, Map<String, Object> headmap, Map<String, Object> map, final Class clas, final MyCallBack callBack) {
+        if (clas == LogBean.class) {
+            /*
+             * 登录
+             * */
+            Retrofits.getInstance().post(url, headmap, map).getonclcked(new Retrofits.onclick() {
+                @Override
+                public void success(String strjson) {
+                    Gson gson = new Gson();
+                    Object o = gson.fromJson(strjson, clas);
+                    callBack.success(o);
+                }
 
-            @Override
-            public void error(String error) {
-                Log.e("登录错误", "登录错误:"+error);
-                callBack.error(error);
-            }
-        });
+                @Override
+                public void error(String error) {
+                    Log.e("登录错误", "登录错误:" + error);
+                    callBack.error(error);
+                }
+            });
+        } else if (clas == RegisteredBean.class) {
+            /*
+             * 注册
+             * */
+            Retrofits.getInstance().post(url, headmap, map).getonclcked(new Retrofits.onclick() {
+                @Override
+                public void success(String strjson) {
+                    Gson gson = new Gson();
+                    Object o = gson.fromJson(strjson, clas);
+                    callBack.success(o);
+                }
+
+                @Override
+                public void error(String error) {
+                    Log.e("注册错误", "注册错误:" + error);
+                    callBack.error(error);
+                }
+            });
+        }
     }
-    /*
-     * 注册
-     * */
-    @Override
-    public void setregister(String url, Map<String, Object> headmap, Map<String, Object> map, final Class clas, final MyCallBack callBack) {
-        Retrofits.getInstance().post(url, headmap, map).getonclcked(new Retrofits.onclick() {
-            @Override
-            public void success(String strjson) {
-                Gson gson=new Gson();
-                Object o = gson.fromJson(strjson, clas);
-                callBack.success(o);
-            }
 
-            @Override
-            public void error(String error) {
-                Log.e("注册错误", "注册错误:"+error);
-                callBack.error(error);
-            }
-        });
+
+    /**
+     * get请求
+     *
+     * @param url
+     * @param headmap
+     * @param map
+     * @param clas
+     * @param callBack
+     */
+    @Override
+    public void setget(String url, Map<String, Object> headmap, Map<String, Object> map, final Class clas, final MyCallBack callBack) {
+        if (clas == FilmRecycler_RemenBean.class) {
+            Retrofits.getInstance().get(url, headmap, map).getonclcked(new Retrofits.onclick() {
+                @Override
+                public void success(String strjson) {
+                    Gson gson = new Gson();
+                    Object o = gson.fromJson(strjson, clas);
+                    callBack.success(o);
+                }
+
+                @Override
+                public void error(String error) {
+                    Log.e("列表错误", "列表错误:" + error);
+                    callBack.error(error);
+                }
+            });
+        }
     }
 }

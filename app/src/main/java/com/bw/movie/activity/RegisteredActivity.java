@@ -39,7 +39,6 @@ public class RegisteredActivity extends AppCompatActivity implements MyView {
     XEditText password;
     @BindView(R.id.zhuce)
     Button zhuce;
-    private String s;
     private MyPresenterImpl presenter;
     private int sex;
 
@@ -87,7 +86,7 @@ public class RegisteredActivity extends AppCompatActivity implements MyView {
         map.put("birthday", mdate);
         map.put("email", memli);
         map.put("pwd2", mpwd1);
-        presenter.getregister(Contacts.REGISTER, headmap, map, RegisteredBean.class);
+        presenter.getpost(Contacts.REGISTER, headmap, map, RegisteredBean.class);
     }
 
     @Override
@@ -97,11 +96,13 @@ public class RegisteredActivity extends AppCompatActivity implements MyView {
             ToastUtil.Toast(registeredBean.getMessage());
             Intent intent = new Intent(RegisteredActivity.this, LogActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 
     @Override
     public void error(String error) {
+        ToastUtil.Toast("注册页面出问题");
     }
 
     /**

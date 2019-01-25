@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/film_recycler_item">
+
+    <ImageView
+        android:id="@+id/film_image"
+        android:layout_width="126dp"
+        android:layout_height="164dp" />
+
+    <RelativeLayout
+        android:layout_width="126dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/film_image"
+        android:background="#33000000">
+
+        <TextView
+            android:id="@+id/film_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textColor="#fff"
+            android:textSize="14dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

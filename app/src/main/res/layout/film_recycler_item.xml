@@ -2,12 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/film_recycler_item">
+    >
 
     <ImageView
         android:id="@+id/film_image"
         android:layout_width="126dp"
-        android:layout_height="164dp" />
+        android:layout_height="164dp"
+        android:background="@drawable/film_recycler_item"/>
 
     <RelativeLayout
         android:layout_width="126dp"

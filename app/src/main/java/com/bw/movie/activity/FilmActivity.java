@@ -60,7 +60,7 @@ public class FilmActivity extends AppCompatActivity {
                         main_rg_rb3.setScaleX((float)0.8);
                         main_rg_rb3.setScaleY((float)0.8);
                         ObjectAnimator ra = ObjectAnimator.ofFloat(main_rg_rb1,"rotation", 0f, 360f);
-                        ra.setDuration(2000);
+                        ra.setDuration(1000);
                         ra.start();
                         break;
                     case R.id.main_rg_rb2:
@@ -71,7 +71,7 @@ public class FilmActivity extends AppCompatActivity {
                         main_rg_rb3.setScaleX((float)0.8);
                         main_rg_rb3.setScaleY((float)0.8);
                         ObjectAnimator ra1 = ObjectAnimator.ofFloat(main_rg_rb2,"rotation", 0f, 360f);
-                        ra1.setDuration(2000);
+                        ra1.setDuration(1000);
                         ra1.start();
                         break;
                     case R.id.main_rg_rb3:
@@ -82,7 +82,7 @@ public class FilmActivity extends AppCompatActivity {
                         main_rg_rb1.setScaleX((float)0.8);
                         main_rg_rb1.setScaleY((float)0.8);
                         ObjectAnimator ra2 = ObjectAnimator.ofFloat(main_rg_rb3,"rotation", 0f, 360f);
-                        ra2.setDuration(2000);
+                        ra2.setDuration(1000);
                         ra2.start();
                         break;
                 }

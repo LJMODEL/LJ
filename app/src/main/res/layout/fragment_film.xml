@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     >
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -22,8 +21,8 @@
 
             <ImageView
                 android:id="@+id/film_first_page_head_loc"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:padding="6dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="30dp"
@@ -39,38 +38,67 @@
                 android:textColor="#fff"
                 android:textSize="14sp" />
 
-          <!--  <com.example.myapplication.FilmFirstPageSearchView
-                android:id="@+id/film_first_page_head_search"
-                android:layout_width="50dp"
+            <LinearLayout
+                android:id="@+id/ll_search"
+                android:layout_width="60dp"
                 android:layout_height="24dp"
-                android:layout_alignBottom="@+id/film_first_page_head_loc_name"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_style"
                 android:layout_alignParentRight="true"
-                android:layout_marginLeft="35dp"
-                android:layout_toRightOf="@id/film_first_page_head_loc_name" />-->
-
-            <!--<recycler.coverflow.RecyclerCoverFlow
-                android:id="@+id/film_first_page_head_viewpager"
-                android:layout_width="327dp"
-                android:layout_height="223dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="85dp"></recycler.coverflow.RecyclerCoverFlow>
--->
+                android:layout_marginTop="40dp"
+                >
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="24dp"
+                    android:src="@mipmap/com_icon_search_default_hdpi"
+                    android:layout_marginLeft="7dp"
+                    />
+                <EditText
+                    android:id="@+id/et_search_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:hint="请输入要搜索的影片"
+                    android:textSize="11sp"
+                    android:background="@null"
+                    android:textColor="#f1f3f1"
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:id="@+id/tv_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="搜索"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    android:layout_marginRight="24dp"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+                <recycler.coverflow.RecyclerCoverFlow
+                    android:layout_marginTop="85dp"
+                    android:id="@+id/banner_garrly"
+                    android:layout_width="327dp"
+                    android:layout_height="158dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    />
             <RelativeLayout
                 android:id="@+id/movie_total_zhi"
                 android:layout_width="340dp"
                 android:layout_height="3dp"
-                android:layout_below="@+id/q1"
+                android:layout_below="@+id/banner_garrly"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/xian"
                 tools:ignore="NotSibling">
-                <View
+                <ProgressBar
                     android:id="@+id/movie_total_shi"
                     android:layout_width="30dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="3dp"
                     android:background="@drawable/tuo_yuan" />
             </RelativeLayout>
         </RelativeLayout>

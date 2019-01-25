@@ -124,18 +124,19 @@
             android:layout_height="24dp"
             android:src="@mipmap/my_icon_rccord_default_hdpi"/>
         <TextView
-            android:id="@+id/goupiao"
+            android:id="@+id/zuixinbanben"
             android:layout_toRightOf="@id/wodeyijian"
             android:layout_below="@id/yijian"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="购票记录"
+            android:text="最新版本"
             android:textSize="12sp"/>
     </RelativeLayout>
 
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/san"

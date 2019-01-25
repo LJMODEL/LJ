@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="150dp"
+    android:layout_margin="10dp"
+ >
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:background="@drawable/yingyuan_shape"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher_background" />
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hahaahahahahahah" />
+
+        <TextView
+            android:id="@+id/dili"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tile"
+            android:layout_marginTop="20dp"
+            android:text="wqeqweqwe" />
+
+        <TextView
+            android:id="@+id/jili"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="12km" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/com_icon_collection_default_hdpi" />
+    </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

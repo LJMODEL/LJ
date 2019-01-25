@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.FilmActivity">
+    tools:context=".MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+    <RadioGroup
+        android:id="@+id/main_rg"
+        android:background="@drawable/mainactivity_shape_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <RadioButton
+            android:tag="0"
+            android:id="@+id/main_rg_rb1"
+            android:button="@null"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:gravity="center_horizontal"
+            android:checked="true"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:background="@drawable/film_item_shape"
+            />
+
+        <RadioButton
+            android:tag="1"
+            android:id="@+id/main_rg_rb2"
+            android:button="@null"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:background="@drawable/cinema_item_shape"/>
+
+        <RadioButton
+            android:tag="2"
+            android:id="@+id/main_rg_rb3"
+            android:button="@null"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:background="@drawable/my_item_shape"
+            />
+    </RadioGroup>
+</RelativeLayout>

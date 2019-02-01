@@ -34,9 +34,17 @@ public class FilmRecycler_actionBean_Adapter extends RecyclerView.Adapter<FilmRe
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FilmRecycler_actionBean_Adapter.Viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull FilmRecycler_actionBean_Adapter.Viewholder holder, final int position) {
         Glide.with(context).load(result.get(position).getImageUrl()).into(holder.film_image);
-        holder.film_name.setText(result.get(position).getName());
+        holder.text_cinema_flow1.setText(result.get(position).getName());
+        holder.film_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (setOnitem!=null){
+                    setOnitem.setlocition(position);
+                }
+            }
+        });
     }
 
     @Override
@@ -46,11 +54,18 @@ public class FilmRecycler_actionBean_Adapter extends RecyclerView.Adapter<FilmRe
 
     public class Viewholder extends RecyclerView.ViewHolder {
         private ImageView film_image;
-        private TextView film_name;
+        private TextView text_cinema_flow1;
         public Viewholder(View itemView) {
             super(itemView);
             film_image=itemView.findViewById(R.id.film_image);
-            film_name=itemView.findViewById(R.id.film_name);
+            text_cinema_flow1=itemView.findViewById(R.id.text_cinema_flow1);
         }
+    }
+    public interface setOnItem{
+        void setlocition(int position);
+    }
+    private FilmRecycler_actionBean_Adapter.setOnItem setOnitem;
+    public void setOnItemClick(FilmRecycler_actionBean_Adapter.setOnItem setOnitem){
+        this.setOnitem=setOnitem;
     }
 }

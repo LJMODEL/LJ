@@ -13,18 +13,16 @@ import android.widget.TextView;
 import com.bw.movie.R;
 
 /**
- * Author 汪巍
+ * Author 李凯
  * DATE 2019/1/25
  */
 public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.ViewHolder> {
 
     private Context mContext;
-    private int[] imageList = {R.drawable.ic_launcher_background, R.drawable.ic_launcher_foreground, R.mipmap.ic_launcher,
-            R.mipmap.icon1, R.mipmap.icon2};
+    private int[] imageList = {R.mipmap.iicon1, R.mipmap.iicon2, R.mipmap.iicon3,
+            R.mipmap.iicon4, R.mipmap.iicon5, R.mipmap.iicon6, R.mipmap.iicon7, R.mipmap.iicon8, R.mipmap.iicon9, R.mipmap.iicon10};
 
-    private String[] mFilm = {"宝贝儿", "嗝嗝老师", "铁血战士", "暮光巴黎", "雪怪大冒险"};
-
-    //private String[] mTime = {"104分钟", "117分钟", "113分钟", "106分钟", "101分钟"};
+    private String[] mFilm = {"宝贝儿", "胡桃子","功夫","暮光巴黎", "铁血战士", "为你写诗", "我的间谍前男友", "无双", "找到你", "昨日星空"};
 
     public BannerAdapter(Context mContext) {
         this.mContext = mContext;
@@ -38,16 +36,17 @@ public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
 
         viewHolder.item_image_name.setText(mFilm[i]);
-        //viewHolder.item_image_time.setText(mTime[i]);
         viewHolder.item_banner_image.setBackgroundResource(imageList[i]);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (onItemClick!=null){
+                    onItemClick.clickItem(i);
+                }
             }
         });
 
@@ -55,25 +54,23 @@ public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 10;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private final ImageView item_banner_image;
         private final TextView item_image_name;
-        //private final TextView item_image_time;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             item_banner_image = itemView.findViewById(R.id.item_banner_image);
             item_image_name = itemView.findViewById(R.id.item_image_name);
-            //item_image_time = itemView.findViewById(R.id.item_image_time);
         }
     }
 
     public interface OnItemClick {
-        //void clickItem(int )
+        void clickItem(int position);
     }
 
     private OnItemClick onItemClick;

@@ -3,6 +3,11 @@
     package="com.bw.movie">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 
     <application
         android:name=".app.MyApp"
@@ -12,7 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/TranslucentTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,10 +35,44 @@
             android:name="design_height_in_dp"
             android:value="667" />
 
-        <activity android:name=".activity.GuideActivity" />
-        <activity android:name=".activity.LogActivity" />
-        <activity android:name=".activity.RegisteredActivity" />
-        <activity android:name=".activity.FilmActivity"></activity>
+        <activity android:name=".activity.GuideActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.LogActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.RegisteredActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.FilmActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            ></activity>
+        <activity android:name=".activity.Film_DateilsActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            ></activity>
+        <activity android:name=".activity.Film_Dateils_xiangqingActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            ></activity>
+        <!-- 微信的activity -->
+        <activity
+            android:name="com.bw.movie.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".fragment.me.Information_Activity" />
+        <activity android:name=".fragment.me.FocusActivity" />
+        <activity android:name=".fragment.me.Feed_Activity"></activity>
+        <activity android:name=".activity.Film_change_cimenaActivity"></activity>
+        <activity android:name=".activity.Cinema_Activity"></activity>
     </application>
 
 </manifest>

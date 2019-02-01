@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bottom_shape">
+    <TextView
+        android:id="@+id/juzhao"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="剧照"/>
+    <ProgressBar
+        android:layout_marginLeft="@dimen/dp_24"
+        android:layout_below="@id/juzhao"
+        android:id="@+id/movie_total_shi"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_width="30dp"
+        android:layout_height="3dp"
+        android:background="@drawable/tuo_yuan" />
+    <ImageView
+        android:id="@+id/diss_log_foreshow_picture"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginRight="24dp"
+        android:src="@mipmap/com_icon_down_default_hdpi" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/foreshow_picture_recy"
+        android:layout_below="@id/movie_total_shi"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

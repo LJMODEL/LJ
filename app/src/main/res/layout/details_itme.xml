@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_10">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/dead"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="11dp"
+            android:layout_toRightOf="@+id/dead"
+            android:text="故友"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dead"
+            android:layout_marginTop="10dp"
+            android:text="还可以吧"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/teme"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content"
+            android:text="10-26 13:04"
+            android:textColor="#999999"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/give"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_below="@+id/content"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@+id/num"
+            android:src="@mipmap/com_icon_praise_default_hdpi" />
+
+        <TextView
+            android:id="@+id/num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:text="12"
+            android:textColor="#666666" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/num"
+            android:layout_marginTop="9dp"
+            android:background="#33d9d9d9"></View>
+    </RelativeLayout>
+</RelativeLayout>

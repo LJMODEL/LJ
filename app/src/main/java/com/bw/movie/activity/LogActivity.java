@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
@@ -28,7 +29,11 @@ import com.bw.movie.presenter.MyPresenterImpl;
 import com.bw.movie.utils.Contacts;
 import com.bw.movie.utils.EncryptUtil;
 import com.bw.movie.utils.SpUtil;
+import com.bw.movie.utils.ToastUtil;
+import com.bw.movie.utils.WeChatUtil;
+import com.bw.movie.utils.WeiXinUtil;
 import com.bw.movie.view.MyView;
+import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import com.xw.repo.XEditText;
 
 import java.util.HashMap;
@@ -53,6 +58,7 @@ public class LogActivity extends AppCompatActivity implements MyView, View.OnCli
     private long exitTime = 0;
     private SharedPreferences sp;
     private SharedPreferences.Editor edit;
+    private String mpwd1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +104,7 @@ public class LogActivity extends AppCompatActivity implements MyView, View.OnCli
         zhuce = findViewById(R.id.zhuce);
         login = findViewById(R.id.login);
         weixin = findViewById(R.id.weixin);
+        weixin.setOnClickListener(this);
         checkbox = findViewById(R.id.checkbox);
         hidden = findViewById(R.id.hidden);
         weixin.setOnClickListener(this);
@@ -122,11 +129,10 @@ public class LogActivity extends AppCompatActivity implements MyView, View.OnCli
                 //跳转动画
                 //startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(LogActivity.this,zhuce,"shareNames").toBundle());
                 startActivity(intent);
-                finish();
                 break;
             case R.id.login:
                 //获得密码
-                String mphone = phone.getText().toString();
+                String mphone = phone.getText().toString().trim();
                 String mpwd = pwd.getText().toString();
                 if (mphone.equals("")) {
                     Toast.makeText(this, "手机号不能为空", Toast.LENGTH_SHORT).show();
@@ -139,13 +145,23 @@ public class LogActivity extends AppCompatActivity implements MyView, View.OnCli
                 } else {
                     Map<String, Object> headmap = new HashMap<>();
                     Map<String, Object> map = new HashMap<>();
-                    String mpwd1 = EncryptUtil.encrypt(mpwd);
+                    mpwd1 = EncryptUtil.encrypt(mpwd);
                     map.put("phone", mphone);
                     map.put("pwd", mpwd1);
                     presenter.getpost(Contacts.LOGIN, headmap, map, LogBean.class);
                 }
                 break;
+            //微信第三方登录
             case R.id.weixin:
+                if (!WeChatUtil.wechat(this).isWXAppInstalled()) {
+                    ToastUtil.Toast("请先安装应用");
+                } else {
+                    //  验证
+                    SendAuth.Req req = new SendAuth.Req();
+                    req.scope = "snsapi_userinfo";
+                    req.state = "wechat_sdk_demo_test";
+                    WeiXinUtil.reg(LogActivity.this).sendReq(req);
+                }
                 break;
         }
     }
@@ -166,8 +182,10 @@ public class LogActivity extends AppCompatActivity implements MyView, View.OnCli
                     int userId = result.getUserId();
                     edit.putString("sessionId", sessionId);
                     edit.putInt("userId", userId);
+                    Log.e("aaaaa", sessionId+   "            " +userId);
                     edit.putString("name", nName);
                     edit.putString("pass", nPass);
+                    edit.putString("password",mpwd1);
                     edit.putBoolean("jizhu", true);
                     edit.commit();
                 } else {

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/details">
+
+    <ImageView
+        android:id="@+id/dianying_details"
+        android:src="@mipmap/com_icon_movie_default_hdpi"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_24"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24" />
+    <TextView
+        android:layout_toRightOf="@id/dianying_details"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="电影详情"/>
+    <ImageView
+        android:id="@+id/details_guanzhu"
+        android:src="@mipmap/com_icon_collection_default_hdpi"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="@dimen/dp_24"
+        android:layout_alignParentRight="true"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24" />
+    <TextView
+        android:id="@+id/name_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_70"
+        android:layout_centerHorizontal="true"
+        android:text="铁血战士"
+        android:textColor="#fff"
+        android:textSize="20dp"/>
+    <ImageView
+        android:id="@+id/image_details"
+        android:src="@mipmap/details"
+        android:layout_below="@id/name_details"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_width="@dimen/dp_259"
+        android:layout_height="@dimen/dp_360" />
+
+    <LinearLayout
+        android:layout_below="@id/image_details"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_24"
+        android:layout_marginRight="@dimen/dp_24"
+        android:layout_height="@dimen/dp_32"
+       >
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/film_details_xiangqing"
+            android:layout_width="@dimen/dp_58"
+            android:layout_height="@dimen/dp_32"
+            android:text="详情"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_14"
+            android:background="@drawable/film_details"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/film_details_foreshow"
+            android:layout_marginLeft="@dimen/dp_24"
+            android:layout_toRightOf="@id/film_details_xiangqing"
+            android:layout_width="@dimen/dp_58"
+            android:layout_height="@dimen/dp_32"
+            android:text="预告"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_14"
+            android:background="@drawable/film_details"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/film_details_still"
+            android:layout_marginLeft="@dimen/dp_24"
+            android:layout_toRightOf="@id/film_details_foreshow"
+            android:layout_width="@dimen/dp_58"
+            android:layout_height="@dimen/dp_32"
+            android:text="剧照"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_14"
+            android:background="@drawable/film_details"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/film_review"
+            android:layout_marginLeft="@dimen/dp_24"
+            android:layout_toRightOf="@id/film_details_still"
+            android:layout_width="@dimen/dp_58"
+            android:layout_height="@dimen/dp_32"
+            android:text="影评"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_14"
+            android:background="@drawable/film_details"/>
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/film_back"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/com_icon_my_default_hdpi"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_24"/>
+    <Button
+        android:id="@+id/film_pay"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:text="购买"
+        android:textColor="#fff"
+        android:textSize="@dimen/sp_23"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_24"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:background="@drawable/buy_ticket"/>
+
+
+</RelativeLayout>

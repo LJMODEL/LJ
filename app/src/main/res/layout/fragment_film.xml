@@ -3,192 +3,221 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <RelativeLayout
-            android:id="@+id/q1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <ImageView
+
+            <RelativeLayout
+                android:id="@+id/q1"
                 android:layout_width="match_parent"
-                android:layout_height="186dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/background" />
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/film_first_page_head_loc"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="6dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="30dp"
-                android:src="@mipmap/com_icon_loc_white_default_hdpi" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="186dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/background" />
 
-            <TextView
-                android:id="@+id/film_first_page_head_loc_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:layout_toRightOf="@id/film_first_page_head_loc"
-                android:text="北京"
-                android:textColor="#fff"
-                android:textSize="14sp" />
+                <ImageView
+                    android:id="@+id/film_first_page_head_loc"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:padding="6dp"
+                    android:src="@mipmap/com_icon_loc_white_default_hdpi" />
+
+                <TextView
+                    android:id="@+id/film_first_page_head_loc_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_toRightOf="@id/film_first_page_head_loc"
+                    android:text="北京"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+                <recycler.coverflow.RecyclerCoverFlow
+                    android:id="@+id/banner_garrly"
+                    android:layout_width="357dp"
+                    android:layout_height="240dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="85dp"
+                    android:layout_marginRight="24dp" />
+
+                <RelativeLayout
+                    android:id="@+id/movie_total_zhi"
+                    android:layout_width="340dp"
+                    android:layout_height="3dp"
+                    android:layout_below="@+id/banner_garrly"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/xian"
+                    tools:ignore="NotSibling">
+
+                    <ProgressBar
+                        android:id="@+id/movie_total_shi"
+                        android:layout_width="30dp"
+                        android:layout_height="3dp"
+                        android:background="@drawable/tuo_yuan" />
+                </RelativeLayout>
+            </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/ll_search"
                 android:layout_width="60dp"
                 android:layout_height="24dp"
-                android:orientation="horizontal"
-                android:background="@drawable/edittext_style"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="40dp"
-                >
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edittext_style"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="24dp"
-                    android:src="@mipmap/com_icon_search_default_hdpi"
                     android:layout_marginLeft="7dp"
-                    />
+                    android:src="@mipmap/com_icon_search_default_hdpi" />
+
                 <EditText
                     android:id="@+id/et_search_content"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:hint="请输入要搜索的影片"
-                    android:textSize="11sp"
                     android:background="@null"
+                    android:hint="请输入要搜索的影片"
                     android:textColor="#f1f3f1"
-                    android:visibility="gone"
-                    />
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+
                 <TextView
                     android:id="@+id/tv_search"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginRight="24dp"
                     android:gravity="center_vertical"
                     android:text="搜索"
                     android:textColor="#fff"
                     android:textSize="12sp"
-                    android:layout_marginRight="24dp"
-                    android:visibility="gone"
-                    />
+                    android:visibility="gone" />
             </LinearLayout>
-                <recycler.coverflow.RecyclerCoverFlow
-                    android:layout_marginTop="85dp"
-                    android:id="@+id/banner_garrly"
-                    android:layout_width="327dp"
-                    android:layout_height="158dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
-                    />
-            <RelativeLayout
-                android:id="@+id/movie_total_zhi"
-                android:layout_width="340dp"
-                android:layout_height="3dp"
-                android:layout_below="@+id/banner_garrly"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/xian"
-                tools:ignore="NotSibling">
-                <ProgressBar
-                    android:id="@+id/movie_total_shi"
-                    android:layout_width="30dp"
-                    android:layout_height="3dp"
-                    android:background="@drawable/tuo_yuan" />
-            </RelativeLayout>
         </RelativeLayout>
+
         <RelativeLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="312dp"
+            android:layout_width="345dp"
             android:layout_height="186dp"
             android:layout_gravity="center"
-            >
+            android:layout_marginTop="20dp">
+
             <ImageView
+                android:id="@+id/jinru"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/com_icon_next_default_hdpi"
-                android:layout_width="24dp"
-                android:layout_height="24dp" />
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/com_icon_next_default_hdpi" />
+
             <TextView
                 android:id="@+id/remendianying"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="热门电影"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
+
             <View
                 android:id="@+id/view1"
-                android:layout_below="@id/remendianying"
-                android:layout_marginTop="4dp"
                 android:layout_width="30dp"
                 android:layout_height="3dp"
-                android:background="@drawable/recycler_view_shape"/>
+                android:layout_below="@id/remendianying"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/recycler_view_shape" />
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recy_remen"
-                android:layout_below="@id/view1"
                 android:layout_width="match_parent"
-                android:layout_height="136dp"></android.support.v7.widget.RecyclerView>
+                android:layout_height="164dp"
+                android:layout_below="@id/view1"
+                android:layout_marginTop="@dimen/dp_2"></android.support.v7.widget.RecyclerView>
         </RelativeLayout>
+
         <RelativeLayout
-            android:layout_width="312dp"
+            android:layout_width="345dp"
             android:layout_height="186dp"
-            android:layout_gravity="center"
-            >
+            android:layout_gravity="center">
+
             <ImageView
+                android:id="@+id/jinru1"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/com_icon_next_default_hdpi"
-                android:layout_width="24dp"
-                android:layout_height="24dp" />
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/com_icon_next_default_hdpi" />
+
             <TextView
                 android:id="@+id/zhangzai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="即将上映"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
+
             <View
                 android:id="@+id/view2"
-                android:layout_below="@id/zhangzai"
-                android:layout_marginTop="4dp"
                 android:layout_width="30dp"
                 android:layout_height="3dp"
-                android:background="@drawable/recycler_view_shape"/>
+                android:layout_below="@id/zhangzai"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/recycler_view_shape" />
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recy_shangying"
-                android:layout_below="@id/view2"
                 android:layout_width="match_parent"
-                android:layout_height="136dp"></android.support.v7.widget.RecyclerView>
+                android:layout_height="164dp"
+                android:layout_below="@id/view2"
+                android:layout_marginTop="@dimen/dp_2"></android.support.v7.widget.RecyclerView>
         </RelativeLayout>
+
         <RelativeLayout
-            android:layout_width="312dp"
+            android:layout_width="345dp"
             android:layout_height="186dp"
-            android:layout_gravity="center"
-            >
+            android:layout_gravity="center">
+
             <ImageView
+                android:id="@+id/jinru2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/com_icon_next_default_hdpi"
-                android:layout_width="24dp"
-                android:layout_height="24dp" />
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/com_icon_next_default_hdpi" />
+
             <TextView
                 android:id="@+id/jijiang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="正在上映"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
+
             <View
                 android:id="@+id/view3"
-                android:layout_below="@id/jijiang"
-                android:layout_marginTop="4dp"
                 android:layout_width="30dp"
                 android:layout_height="3dp"
-                android:background="@drawable/recycler_view_shape"/>
+                android:layout_below="@id/jijiang"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/recycler_view_shape" />
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recy_jijiang"
-                android:layout_below="@id/view3"
                 android:layout_width="match_parent"
-                android:layout_height="136dp"></android.support.v7.widget.RecyclerView>
+                android:layout_height="164dp"
+                android:layout_below="@id/view3"
+                android:layout_marginTop="@dimen/dp_2"></android.support.v7.widget.RecyclerView>
         </RelativeLayout>
     </LinearLayout>
 </ScrollView>

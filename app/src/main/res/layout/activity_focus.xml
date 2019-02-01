@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="83dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/selector_shape"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="电影" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="83dp"
+            android:layout_height="25dp"
+            android:background="@drawable/selector_shape"
+            android:button="@null"
+            android:gravity="center"
+            android:text="影院" />
+    </RadioGroup>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/yrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp" />
+</RelativeLayout>

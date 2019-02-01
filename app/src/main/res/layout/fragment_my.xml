@@ -1,146 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <ImageView
         android:id="@+id/my_background"
-        android:scaleType="fitXY"
-        android:src="@mipmap/wode_background"
         android:layout_width="match_parent"
-        android:layout_height="220dp" />
+        android:layout_height="220dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/wode_background" />
+
     <ImageView
         android:id="@+id/my_music"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="30dp"
-        android:src="@mipmap/my_icon_remind_default_hdpi"
-        android:layout_width="24dp"
-        android:layout_height="24dp" />
+        android:src="@mipmap/my_icon_remind_default_hdpi" />
+
     <ImageView
         android:id="@+id/my_head"
-        android:layout_marginTop="70dp"
-        android:layout_centerHorizontal="true"
-        android:src="@mipmap/wode_head"
         android:layout_width="72dp"
-        android:layout_height="72dp" />
+        android:layout_height="72dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:src="@mipmap/wode_head" />
+
+    <TextView
+        android:id="@+id/name_my"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_head"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="故友"
+        android:textColor="#fff" />
+
     <RelativeLayout
         android:id="@+id/wodexinxi"
-        android:layout_below="@id/my_background"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
         android:layout_width="match_parent"
         android:layout_height="86dp"
-        android:background="@drawable/my_background_shape">
+        android:layout_below="@id/my_background"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/my_shape">
+
         <ImageView
             android:id="@+id/message"
-            android:src="@mipmap/my_icon_messiage_default_hdpi"
-            android:layout_marginTop="24dp"
-            android:layout_marginLeft="48dp"
             android:layout_width="24dp"
-            android:layout_height="24dp" />
+            android:layout_height="24dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="19dp"
+            android:src="@mipmap/my_icon_messiage_default_hdpi" />
+
         <TextView
-            android:layout_below="@id/message"
-            android:layout_marginLeft="36dp"
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/message"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="10dp"
             android:text="我的信息"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/wode_er"
-        android:layout_below="@id/wodexinxi"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
         android:layout_width="match_parent"
         android:layout_height="86dp"
-        android:background="@drawable/my_background_shape">
+        android:layout_below="@id/wodexinxi"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/my_shape">
+
         <ImageView
             android:id="@+id/attention"
-            android:src="@mipmap/my_icon_attention_default_hdpi"
-            android:layout_marginTop="24dp"
-            android:layout_marginLeft="48dp"
             android:layout_width="24dp"
-            android:layout_height="24dp" />
+            android:layout_height="24dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="19dp"
+            android:src="@mipmap/my_icon_attention_default_hdpi" />
+
         <TextView
             android:id="@+id/wodeguanzhu"
-            android:layout_below="@id/attention"
-            android:layout_marginLeft="36dp"
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/attention"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="10dp"
             android:text="我的关注"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
+
         <ImageView
-            android:layout_toRightOf="@id/attention"
-            android:layout_marginLeft="54dp"
-            android:layout_marginTop="24dp"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@mipmap/my_icon_rccord_default_hdpi"/>
+            android:layout_marginLeft="42dp"
+            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@id/attention"
+            android:src="@mipmap/my_icon_rccord_default_hdpi" />
+
         <TextView
-            android:layout_toRightOf="@id/wodeguanzhu"
-            android:layout_below="@id/attention"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/attention"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/wodeguanzhu"
             android:text="购票记录"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/san"
-        android:layout_below="@id/wode_er"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
         android:layout_width="match_parent"
         android:layout_height="86dp"
-        android:background="@drawable/my_background_shape">
+        android:layout_below="@id/wode_er"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/my_shape">
+
         <ImageView
             android:id="@+id/feed"
-            android:src="@mipmap/my_icon_feedback_default_hdpi"
-            android:layout_marginTop="24dp"
-            android:layout_marginLeft="48dp"
-            android:layout_width="24dp"
-            android:layout_height="24dp" />
-        <TextView
-            android:id="@+id/wodeyijian"
-            android:layout_below="@id/feed"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="我的关注"
-            android:textSize="12sp"/>
-        <ImageView
-            android:id="@+id/yijian"
-            android:layout_toRightOf="@+id/feed"
-            android:layout_marginLeft="54dp"
-            android:layout_marginTop="24dp"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@mipmap/my_icon_rccord_default_hdpi"/>
-        <TextView
-            android:id="@+id/zuixinbanben"
-            android:layout_toRightOf="@id/wodeyijian"
-            android:layout_below="@id/yijian"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="19dp"
+            android:src="@mipmap/my_icon_feedback_default_hdpi" />
+
+        <TextView
+            android:id="@+id/wodeyijian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="最新版本"
-            android:textSize="12sp"/>
+            android:layout_below="@id/feed"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="10dp"
+            android:text="意见反馈"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/tui"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="42dp"
+            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@+id/feed"
+            android:src="@mipmap/my_icon_rccord_default_hdpi" />
+
+        <TextView
+            android:id="@+id/goupiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tui"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/wodeyijian"
+            android:text="退出登录"
+            android:textSize="12sp" />
     </RelativeLayout>
 
     <TextView
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/san"
-        android:text="©八维移动通信学院毕业作品"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="©八维移动通信学院毕业作品" />
 
 </RelativeLayout>

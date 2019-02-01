@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dlog_shape"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/recommend_detail_lin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:id="@+id/recommend_detail_particulars"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="详情"
+                    android:textSize="@dimen/dp_16" />
+
+                <View
+                    android:id="@+id/recommend_detail_particulars_view"
+                    android:layout_width="40dp"
+                    android:layout_height="3dp"
+                    android:background="@drawable/recommend_item_shape" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/recommend_detail_comment"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="评论"
+                    android:textSize="@dimen/dp_16" />
+
+                <View
+                    android:id="@+id/recommend_detail_comment_view"
+                    android:layout_width="40dp"
+                    android:layout_height="3dp"
+                    android:background="@drawable/recommend_item_shape"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/detail_back"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:background="@mipmap/com_icon_down_default_hdpi" />
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/coment_recy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/coordinator"
+        android:visibility="gone"></android.support.v7.widget.RecyclerView>
+
+    <ImageView
+        android:id="@+id/xie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:src="@mipmap/com_icon_publish_default_hdpi" />
+
+    <LinearLayout
+        android:id="@+id/particulars_recy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/coordinator"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:background="@mipmap/cinemadetail_icon_locaion_default_hdpi" />
+
+            <TextView
+                android:id="@+id/detail_dialog_address"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:gravity="center"
+                android:text="海淀区悦秀楼99号二层"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:background="@mipmap/cinemadetail_icon_phone_default_hdpi" />
+
+            <TextView
+                android:id="@+id/detail_dialog_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:gravity="center"
+                android:text="0412-8999123"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:background="@mipmap/cinemadetail_icon_route_default_hdpi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:gravity="center"
+                android:text="乘车路线"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="地铁:"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/detail_dialog_subway"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="24dp"
+            android:text="13号线西二旗站A口出,换乘运通509路或362路公交车软件园南站下车，过马路对面"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="公交:"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/detail_dialog_bus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="24dp"
+            android:text="乘坐362/429/592、运通509到软件园南站下车；"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="10dp"
+            android:text="自驾:"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/detail_dialog_self"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="24dp"
+            android:text="可沿北五环到上地环岛，向北与第二环岛(上地七街),向西500米左右即到"
+            android:textSize="12sp" />
+    </LinearLayout>
+</RelativeLayout>

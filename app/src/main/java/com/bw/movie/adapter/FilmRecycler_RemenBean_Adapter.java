@@ -35,14 +35,23 @@ public class FilmRecycler_RemenBean_Adapter extends RecyclerView.Adapter<FilmRec
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull Viewholder holder, final int position) {
         Glide.with (context)
                 .load (result.get(position).getImageUrl())
                 .apply (RequestOptions.errorOf (R.drawable.zhan))        //加载失败 默认的加载图片
                 .apply (RequestOptions.placeholderOf (R.drawable.dong)) //加载中 默认的加载图片
                 .into (holder.film_image);
-        holder.film_name.setText(result.get(position).getName());
+        holder.text_cinema_flow1.setText(result.get(position).getName());
+        holder.film_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (setOnitem!=null){
+                    setOnitem.setlocition(position);
+                }
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {
@@ -51,12 +60,20 @@ public class FilmRecycler_RemenBean_Adapter extends RecyclerView.Adapter<FilmRec
 
     public class Viewholder extends RecyclerView.ViewHolder {
         private ImageView film_image;
-        private TextView film_name;
+        private TextView text_cinema_flow1;
 
         public Viewholder(View itemView) {
             super(itemView);
             film_image = itemView.findViewById(R.id.film_image);
-            film_name = itemView.findViewById(R.id.film_name);
+            text_cinema_flow1 = itemView.findViewById(R.id.text_cinema_flow1);
         }
     }
+    public interface setOnItem{
+        void setlocition(int position);
+    }
+    private setOnItem setOnitem;
+    public void setOnItemClick(setOnItem setOnitem){
+        this.setOnitem=setOnitem;
+    }
+
 }

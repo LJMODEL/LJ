@@ -5,14 +5,14 @@
 
     <ImageView
         android:id="@+id/item_banner_image"
-        android:layout_width="158dp"
-        android:layout_height="223dp" />
+        android:layout_width="165dp"
+        android:layout_height="257dp" />
 
     <RelativeLayout
         android:layout_width="158dp"
         android:layout_height="36dp"
         android:layout_alignBottom="@id/item_banner_image"
-        android:background="#50666666">
+        android:background="#33a3a3a3">
 
         <TextView
             android:id="@+id/item_image_name"

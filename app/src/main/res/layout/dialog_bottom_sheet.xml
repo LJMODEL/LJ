@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#00ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/dialog_bottom_shape"
+            >
+            <RelativeLayout
+                android:id="@+id/resone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:padding="24dp">
+
+                <ImageView
+                    android:id="@+id/img_mv"
+                    android:layout_width="110dp"
+                    android:layout_height="150dp"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/res_mv_res"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@id/diss_log"
+                    android:layout_toRightOf="@id/img_mv">
+
+                    <LinearLayout
+                        android:id="@+id/linone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="类型："
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:textColor="#FF262626"
+                            android:id="@+id/tv_type_mv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lintwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/linone"
+
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="导演："
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:textColor="#FF262626"
+                            android:id="@+id/tv_director_mv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linthree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lintwo"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="时长："
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:textColor="#FF262626"
+                            android:id="@+id/tv_time_mv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linfour"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/linthree"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="产地："
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:textColor="#FF262626"
+                            android:id="@+id/tv_place_mv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:id="@+id/diss_log"
+                    android:layout_width="21dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="27dp"
+                    android:src="@mipmap/com_icon_down_default_hdpi" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/resone"
+                android:paddingHorizontal="24dp">
+
+                <LinearLayout
+                    android:id="@+id/linfive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="剧情简介"
+                        android:textColor="#333333"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_3"
+                        android:layout_below="@+id/frag_home_movie_name_item"
+                        android:background="@drawable/tuo_yuan" />
+
+                    <TextView
+                        android:textColor="#FF262626"
+                        android:layout_width="30dp"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/content_mv_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linfive"
+                    android:layout_marginTop="10dp"
+                    android:maxLength="100" />
+
+                <LinearLayout
+                    android:id="@+id/linsix"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/content_mv_detail"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape"
+                        android:text="演职人员"
+                        android:textColor="#333333"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_3"
+                        android:layout_below="@+id/frag_home_movie_name_item"
+                        android:background="@drawable/tuo_yuan" />
+
+                    <TextView
+                        android:textColor="#FF262626"
+                        android:layout_width="30dp"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/actor_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linsix"
+                    android:layout_marginTop="10dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/img_detail_mv"
+            android:layout_width="110dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="24dp"
+            android:src="@mipmap/icon1" />
+    </RelativeLayout>
+
+</RelativeLayout>

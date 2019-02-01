@@ -1,8 +1,9 @@
 package com.bw.movie.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class FilmRecycler_RemenBean {
+public class FilmRecycler_RemenBean implements Serializable{
 
     private String message;
     private String status;
@@ -32,7 +33,7 @@ public class FilmRecycler_RemenBean {
         this.result = result;
     }
 
-    public static class ResultBean {
+    public static class ResultBean implements Serializable {
 
 
         private int followMovie;
